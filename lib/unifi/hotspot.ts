@@ -48,10 +48,6 @@ export async function createVoucher(note: string) {
     })).data.vouchers as WifiVoucher[])[0];
 }
 
-/* curl -L -g -X DELETE "https://api.ui.com/v1/connector/consoles/{consoleId}/proxy/network/integration/v1/sites/{siteId}/hotspot/vouchers/{voucherId}" \
--H "Accept: application/json" \
--H "X-API-Key: <X-API-Key>" */
-
 export async function deleteVoucher(voucherId: string) {
     const client = await createClient();
 
