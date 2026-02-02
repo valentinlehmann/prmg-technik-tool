@@ -32,10 +32,9 @@ export default function CredentialsDialog() {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-sm">
                     <DialogHeader>
-                        <DialogTitle>Edit profile</DialogTitle>
+                        <DialogTitle>WLAN-Zugangsdaten</DialogTitle>
                         <DialogDescription>
-                            Make changes to your profile here. Click save when you&apos;re
-                            done.
+                            Hier findest du die Zugangsdaten für das Gast-WLAN.
                         </DialogDescription>
                     </DialogHeader>
                     <FieldGroup>
