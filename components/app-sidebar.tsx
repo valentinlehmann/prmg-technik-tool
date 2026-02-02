@@ -108,10 +108,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarContent>
             <SidebarFooter>
                 {
-                    (!userLoading || !user) ? <NavUser user={{
-                        name: user?.user_metadata.preffered_username || user?.user_metadata.full_name || "Unknown User",
-                        email: user?.email || "",
-                        avatar: user?.user_metadata.picture
+                    (!userLoading && user) ? <NavUser user={{
+                        name: user.user_metadata.full_name || "Unbekannter Nutzer",
+                        email: user.email || "",
+                        avatar: user.user_metadata.picture
                     }} /> : <Skeleton className={"h-12 w-52 rounded"} />
                 }
             </SidebarFooter>
