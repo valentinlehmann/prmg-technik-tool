@@ -73,3 +73,19 @@ export async function deleteVoucher(voucherId: string) {
         }
     });
 }
+
+export async function getWifiCredentials() {
+    const client = await createClient();
+
+    // Verify user is authenticated
+    const {data, error: authError} = await client.auth.getClaims();
+
+    if (authError || !data?.claims?.email) {
+        throw new Error("User is not authenticated");
+    }
+
+    return {
+        ssid: process.env.WIFI_NETWORK_SSID!,
+        password: process.env.WIFI_NETWORK_PASSWORD!,
+    }
+}

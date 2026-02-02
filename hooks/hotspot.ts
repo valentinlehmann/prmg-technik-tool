@@ -1,7 +1,7 @@
 "use client";
 
 import {useMutation, useQuery} from "@tanstack/react-query";
-import {createVoucher, deleteVoucher, getAllVouchers} from "@/lib/unifi/hotspot";
+import {createVoucher, deleteVoucher, getAllVouchers, getWifiCredentials} from "@/lib/unifi/hotspot";
 import {queryClient} from "@/components/client-query-client-provider";
 
 export function useVouchers() {
@@ -29,4 +29,13 @@ export function useVoucherDeleteMutation() {
             return await deleteVoucher(voucherId).then(() => queryClient.invalidateQueries({queryKey: ['vouchers']}));
         }
     })
+}
+
+export function useWifiCredentials() {
+    return useQuery({
+        queryKey: ['wifi-credentials'],
+        queryFn: async () => {
+            return await getWifiCredentials();
+        }
+    });
 }

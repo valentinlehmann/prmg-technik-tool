@@ -16,7 +16,7 @@ import {
 import { MoreHorizontalIcon } from "lucide-react"
 import {WifiVoucher} from "@/lib/types/wifi-voucher";
 import dayjs from "dayjs";
-import {useVoucherDeleteMutation} from "@/hooks/voucher";
+import {useVoucherDeleteMutation} from "@/hooks/hotspot";
 
 export default function VoucherTable(props: {
     vouchers: WifiVoucher[]

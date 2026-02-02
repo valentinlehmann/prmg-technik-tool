@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label"
 import {PlusIcon} from "lucide-react";
 import {useState} from "react";
 import LoadingOverlay from "@/components/loading-overlay";
-import {useVoucherCreateMutation} from "@/hooks/voucher";
+import {useVoucherCreateMutation} from "@/hooks/hotspot";
 
 export function CreateVoucherDialog() {
     const [usage, setUsage] = useState("");
